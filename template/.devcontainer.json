@@ -4,8 +4,7 @@
 	"name": "cc65 template",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
-	"features": {},
-    "vscode": {}
+	"features": {}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
