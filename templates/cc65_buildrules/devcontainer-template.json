@@ -1,6 +1,6 @@
 {
     "id": "cc65_buildrules",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "name": "CC65 Build Rules",
     "description": "CC65 build rules for compilation",
     "optionalPaths": [
