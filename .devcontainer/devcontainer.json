@@ -8,10 +8,11 @@
 		"vscode": {
 			"extensions": [
 				"mads-hartmann.bash-ide-vscode",
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"github.vscode-github-actions"
 			]
 		}
 	},
-	"postCreateCommand": "npm install -g @devcontainers/cli",
+	"postCreateCommand": "npm install -g @devcontainers/cli && sudo apt update && sudo apt upgrade -y",
     "runArgs": ["--ulimit=nofile=1024:1048576"]
 }
