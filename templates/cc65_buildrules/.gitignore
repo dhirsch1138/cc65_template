@@ -1,0 +1,6 @@
+build/*
+!build/
+source/*
+!source/
+.c65/firmware/*
+!.c65/firmware/
