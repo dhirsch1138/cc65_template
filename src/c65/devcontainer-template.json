@@ -1,7 +1,0 @@
-{
-    "id": "cc65_template",
-    "version": "1.0.0",
-    "name": "cc65_template",
-    "description": "6502 rules for cc65 (ben eater)",
-    "optionalPaths": []
-}
