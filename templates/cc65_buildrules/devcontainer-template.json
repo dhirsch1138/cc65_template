@@ -3,5 +3,9 @@
     "version": "1.0.0",
     "name": "CC65 Build Rules",
     "description": "CC65 build rules for compilation",
-    "optionalPaths": []
+    "optionalPaths": [
+          "examples/*",
+          "stage/*",
+          ".github/*"
+    ]
 }
