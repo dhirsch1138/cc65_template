@@ -1,8 +1,8 @@
 {
     "id": "cc65_buildrules",
-    "version": "2.0.3",
-    "name": "CC65 dev container starting image with preconfigured makefile and make rules. Comes with optional examples. To use, just create a new dev container with a custom starting point of ghcr.io/dhirsch1138/cc65_template/cc65_buildrules",
-    "description": "C",
+    "version": "2.0.4",
+    "name": "CC65 Development Dev Container",
+    "description": "CC65 dev container starting image with preconfigured makefile and make rules. Comes with optional examples. To use, just create a new dev container with a custom starting point of ghcr.io/dhirsch1138/cc65_template/cc65_buildrules",
     "optionalPaths": [
           "examples/*",
           "stage/*",
