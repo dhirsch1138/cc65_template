@@ -1,5 +1,5 @@
 # Introduction
-This is my meager attempt to create functional 6502 dev container template for use with ben eater's 6502 projects. This template is targeted for VSCode but could easily be adapted (see the vscode extensions in the devcontainer.json). 
+This is my meager attempt to create functional 6502 dev container template. This template is targeted for VSCode but could easily be adapted (see the vscode extensions in the devcontainer.json). The examples modeled on Ben Eater's "blink.s" program from his 6502 tutorial videos. 
 
 It gives you:
 * An installed and configured 6502 compile chain in cc65, with the 'make file' already built
