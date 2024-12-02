@@ -54,7 +54,7 @@ This dev container comes with NO FIRMWARE OR SOURCE in the required directories.
 * All *.s files in "source/" will be assembled and linked. This means they can and will step on eachother in the resulting output if you are not careful. 
 * *.s files can include other files without that extension and the resulting combined file will treated as a single *.s file. 
 * These concepts are shown in the following example(s):
- * "examples/video3_w_cc65_viafirmware" demonstrates include files and multiple *.s files
+  * "examples/video3_w_cc65_viafirmware" demonstrates include files and multiple *.s files
 
 ### Firmware
 Defines memory spaces & segments that your code will use. This sounds scary, don't panic. I'll try to explain it in comments as part of my examples. For now, just know that **firmware is defined in source/firmware.cfg**
