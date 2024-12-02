@@ -7,10 +7,14 @@
 ; ca65 documentaiton: https://cc65.github.io/doc/ca65.html#ss11.66
 ;It works like you'd expect an include, the assembler will combine the included files with the source before assembling.
 ;
-;Include the reset file for the vector
-  .include "reset_interrupt.s.inc"
 ;Include the via file (we can use the .inc file as a sort of header, defining the imports there and keeping this source clean)
-  .include "via.s.inc" 
+  .include "via.s.inc"
+ ;
+ ;BE AWARE THAT LOCATION MATTERS FOR INCLUDED CONTENT, YOU MAY BE BETTER SERVED ADDING YOUR INCLUDED CONTENT ELSEWHERE
+ ;LIKE AT THE END OF THE CODE.
+ ;
+ ;The reset vector will be included at the end of the
+ ;
  ;
  ;
  ;Aside from the obvious inclusion of the included files, the next big difference we'll see is that
@@ -94,4 +98,5 @@ loop:
   ;jump back to the loop reference. We are now looping forever and ever and ever
   jmp loop
 
-
+;Include the reset file for the vector
+  .include "reset_interrupt.s.inc"

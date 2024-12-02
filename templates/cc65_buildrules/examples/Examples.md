@@ -1,1 +1,1 @@
-See Examples section in README.md
+See Examples section in README.md, copy the folder contents into "source/" to and "make all" to see them in action.
