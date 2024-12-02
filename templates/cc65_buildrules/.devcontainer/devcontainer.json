@@ -5,7 +5,7 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
 	"features": {	
-		"ghcr.io/dhirsch1138/cc65_feature/cc65:1": {},
+		"ghcr.io/dhirsch1138/cc65_feature/cc65:2.0.7": {},
 		"ghcr.io/dhirsch1138/minipro_feature/minipro:1": {}
 	},
 	"customizations": {
