@@ -74,10 +74,10 @@ Again: This dev container comes with NO FIRMWARE OR SOURCE in the required direc
 - Open a terminal instance for the container.
 - Make sure you are in the base folder of the image (where the makefile is)
 - run "make all"
-- If all goes well, your generated binary will be placed in build/output.bin
+- If all goes well, your generated binary will be placed in "build/output.bin"
 
 ### Looking at generated "output.bin" using hexdump
-* hexdump is already installed in the container. just run: hexdump -C build/output.bin
+* hexdump is already installed in the container. just run: "hexdump -C build/output.bin" without quotes in container terminal instance.
 
 ### Writing eprom
 #### From inside the container
@@ -88,25 +88,21 @@ If for whatever reason minipro isn't playing nice (again it is untested, sorry) 
 
 # Quick Examples
 This dev container has three examples of different implementations of Ben Eater's blink.s program from Video 3. All three of these examples build into an identical resulting output.bin, they just illustrate how the functionality of cc65 can be leveraged to help remove mental labor from the coder.
-- examples/video3_original - Ben's rotating led blinker "blinks." from video 3 is in examples\video3_original
-- examples/video3_w_cc65 - dbuchwald's cc65'd version of Ben's example is in examples\video3_w_cc65
-- examples/video3_w_cc65_viafirmware - illustrates how the firmware can be leveraged to dynamically handle memory spaces like the addresses we've assigned to the VIA, and eliminate the fragile hard coded memory references for via addresses like $6000. We also introduce included files to keep our codebase organized. Again, most of this is dbuchwald's fine work.
+- "examples/video3_original" - Ben's rotating led blinker "blinks.s" from video 3 (https://eater.net/downloads/blink.s)
+- "examples/video3_w_cc65" - dbuchwald's cc65'd version of Ben's example video 3 (https://github.com/dbuchwald/cc65-tools/blob/main/tutorial/02_blink/blink.s)
+- "examples/video3_w_cc65_viafirmware" - Illustrates how the firmware can be leveraged to dynamically handle memory spaces like the addresses we've assigned to the VIA, and eliminate the fragile hard coded memory references for via addresses like $6000. We also introduce included files to keep our codebase organized. Again, most of this is dbuchwald's fine work (https://github.com/dbuchwald/cc65-tools/blob/main/tutorial/03_blink/blink.s)
 
-Reminder: the code from the examples will need to be moved into source/ and .c65/firmware to actually build them.
+Reminder: the code from the examples will need to be moved into "source/" to build them
 
 ## Jumpstart: stage an example
-*** REVIEW THE SCRIPT YOURSELF BEFORE RUNNING, I AM NEW AT BASH SO BE WARNED ***
 To help get you started you can:
-* Run "stage/stage_video3_w_cc65_firmware.sh" to stage my shiny example of Ben Eater's day 3 blink.s (https://eater.net/downloads/blink.s https://eater.net/6502) code **WARNING THIS MIGHT SQUISH ANY CODE YOU HAVE, BACKUP FIRST**
- * It will put the source files into source/
- * It will put the firmware.cfg into source/
-* You can simply copy the contents of any of the examples in examples/
-* You can write your own.
+* You can simply copy the contents of any of the examples in "examples/" into "source/, I recommend "examples/video3_w_cc65_viafirmware" as I added a bunch of documentation
+* You can write your own (again in "source/")
 
 # Attributions and Resources
 * **dbuchwald** https://github.com/dbuchwald/cc65-tools This project is only possible because of their makefile rules, configurations, and source examples. Sorry for butchering your work. Many of the examples presented are (or are based on) their work.
 * **MINIPRO** https://gitlab.com/DavidGriffith/minipro This is the project that lets us program eproms
-* **Ben Eater** https://eater.net/6502 The amazing person who has taught us all a lot, and put an amazing tutorial together
+* **Ben Eater** https://eater.net/6502 The creator the the awesome 6502 youtube series. Also sells kits @ https://eater.net/shop
 * **Garth Wilson** http://wilsonminesco.com/6502primer/65tutor_intro.html The 6502 primer. Enough said.
 * **VASM** http://sun.hasenbraten.de/vasm the first assembler Ben introduces us too.
 * **cc65** https://cc65.github.io/ development package platform for 6502 family
