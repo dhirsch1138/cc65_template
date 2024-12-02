@@ -31,8 +31,9 @@ Follow the instructions on https://code.visualstudio.com/docs/devcontainers/cont
 ## That's all great, how do use this template to get a fresh dev container on my machine?
 This project was originally a dev container with everything in it: https://github.com/dhirsch1138/cc65_devcontainer_1 , but I moved it all into a dev container template to make it easier to use as intended.
 
-Until I can figure out how to get this template formally registered, use the VS Code task (F1) "Dev Containers: New Dev Container" to load a new container using this template.
-* When prompted for the container, type in "ghcr.io/dhirsch1138/cc65_template/cc65_buildrules" without the quotes. I encourage you to check out this repo before doing so, as you might be prompted to trust this container (as it'll be running code). 
+Use the VS Code task (F1) "Dev Containers: New Dev Container" to load a new container using this template.
+* When prompted for the container, type in "ghcr.io/dhirsch1138/cc65_template/cc65_buildrules" without the quotes. I encourage you to check out this repo before doing so, as you might be prompted to trust this container (as it'll be running code).
+  * I intend to get this template registered so that it shows in the lookup. One day. I hope.  
 
 **Recommended**: Use your own repo to track your changes and push them somewhere outside of the container. I don't know how permenant docker containers are, I wouldn't trust a lot of work to one without having it backed up.
 
