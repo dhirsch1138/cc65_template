@@ -3,9 +3,9 @@ This is my meager attempt to create functional 6502 dev container template for u
 
 It gives you:
 * An installed and configured 6502 compile chain in cc65, with the 'make file' already built
- * This gives more features than vasm (see the examples\ folder)
- * This is a standardized chain that also supports C code (though my file and rules prob won't support that)
-* 6502 specific vs code extensions
+ * CC65 offers more features than vasm (see the examples\ folder)
+ * CC65 also supports C code, though my current rules files won't support it.
+* 6502 specific VS Code extensions
 * Minipro already installed and ready to rock
 
 All without having to install anything on your workstation (other than what is needed for Dev Containers & VS Code). No having to download or compile anything on your own.
