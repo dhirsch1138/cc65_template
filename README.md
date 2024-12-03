@@ -12,6 +12,8 @@ All without having to install anything on your workstation (other than what is n
 
 **This is my first attempt at a dev container project, I offer no warranty and make no promises. I will gratefully accept any and all guidance and advice**
 
+---
+
 # Dev Containers
 This might be your first encounter with dev containers. This project was mine (killing two birds with one rock, learning Dev Containers and 6502).
 
@@ -22,21 +24,26 @@ Dev containers are self contained docker containers that house everything needed
  * code 6502 assembly
  * compile it using cc65
  * load it onto the eprom using minipro. You don't actually have to install any of that on your machine, it is all automagically in the dev container for youl
-## Why am I using a dev container?
-I am both meticious and lazy. I want my environment a specific way, but I am far too lazy to document it or recreate it verbatim every time I want to change something. Dev containers are self documenting, reproducible, and easy to share.
+## Why create a dev container template?
+I am both meticious and lazy. I want my environment a specific way, but I am far too lazy to document it or recreate it verbatim every time I want to change something. Templates are self documenting, reproducible, easy to share, and easy to apply.
 
 ## What do I need to use dev containers?
 Follow the instructions on https://code.visualstudio.com/docs/devcontainers/containers#getstarted-articles. But basically you need: docker, vscode, and the dev container extension. 
 
 ## Create a Dev Container using this template
-**Short answer: VS Code task (F1) "Dev Containers: New Dev Container", provide custom template "ghcr.io/dhirsch1138/cc65_template/cc65_buildrules" without the quotes**
+**_I encourage you to check out this repo before doing so, as you might be prompted to trust this container (as it'll be running code)._**
+
+**Short answer:** VS Code task (F1) "Dev Containers: New Dev Container", provide custom template `ghcr.io/dhirsch1138/cc65_template/cc65_buildrules`.
 
 This project was originally a dev container with everything in it: https://github.com/dhirsch1138/cc65_devcontainer_1 , but I moved it all into a dev container template to make it easier to use as intended.
 Use the VS Code task (F1) "Dev Containers: New Dev Container" to load a new container using this template.
-* When prompted for the container, type in "ghcr.io/dhirsch1138/cc65_template/cc65_buildrules" without the quotes. I encourage you to check out this repo before doing so, as you might be prompted to trust this container (as it'll be running code).
-  * I intend to get this template registered so that it shows in the lookup. One day. I hope.  
+* When prompted for the container, type in `ghcr.io/dhirsch1138/cc65_template/cc65_buildrules`. 
+  * I intend to get this template registered so that it shows in the lookup. One day. I hope.
+* When prompted to create a dev container for this template, say yes. Or don't. You do you.
 
 **Recommended**: Use your own repo to track your changes and push them somewhere outside of the container. I don't know how permenant docker containers are, I wouldn't trust a lot of work to one without having it backed up.
+
+---
 
 # Coding in the Dev Container
 ## I'm in the dev container, now what?
@@ -99,6 +106,8 @@ Reminder: the code from the examples will need to be moved into "source/" to bui
 To help get you started you can:
 * You can simply copy the contents of any of the examples in "examples/" into "source/, I recommend "examples/video3_w_cc65_viafirmware" as I added a bunch of documentation
 * You can write your own (again in "source/")
+
+---
 
 # Attributions and Resources
 * **dbuchwald** https://github.com/dbuchwald/cc65-tools This project is only possible because of their makefile rules, configurations, and source examples. Sorry for butchering your work. Many of the examples presented are (or are based on) their work.
