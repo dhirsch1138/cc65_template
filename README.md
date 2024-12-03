@@ -65,7 +65,7 @@ This dev container comes with NO FIRMWARE OR SOURCE in the required directories.
 
 ### Firmware
 Defines memory spaces & segments that your code will use. This sounds scary, don't panic. I'll try to explain it in comments as part of my examples. For now, just know that **firmware is defined in source/firmware.cfg**. The make rules in this template expect a firmware.cfg file in the source director. When in doubt, simpler is better if you don't need the extra features. They are in all three examples:
-* "examples/video3_original" has a simple firmware definition, just declaring the code address range: starting at $8000 for $8000 bytes. The reset segment is defined too.
+* "examples/video3_original_w_cc65" has a simple firmware definition but it isn't actually being utilized in the source.
 * "examples/video3_w_cc65" has the same simple firmware definition, just declaring the code address range: starting at $8000 for $8000 bytes. The reset segment is defined too.
 * "examples/video3_w_cc65_viafirmware" has the same code address range, but also reserved addresses for the VIA. This lets the code reference the VIA address space dynamically.
 Documentation is here https://cc65.github.io/doc/ld65.html#config-files
