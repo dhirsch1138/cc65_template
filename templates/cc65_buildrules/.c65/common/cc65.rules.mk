@@ -1,3 +1,4 @@
+#Based on https://github.com/dbuchwald/cc65-tools
 #include common/tools.mk
 #because we hid the common directory for make in .c65
 include $(COMMON_FOLDER)tools.mk
