@@ -1,1 +1,1 @@
-firmware.cfg isn't actually used in Ben's example, but the make files expect it
+firmware.cfg isn't actually used in Ben's example, but cc65 expects it (at least with the current make rule)
