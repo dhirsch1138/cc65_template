@@ -3,7 +3,7 @@
 {
 	"name": "cc65 development template",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
+	"image": "mcr.microsoft.com/devcontainers/base:debian",
 	"features": {	
 		"ghcr.io/dhirsch1138/cc65_feature/cc65:2.0.8": {},
 		"ghcr.io/dhirsch1138/minipro_feature/minipro:1.1.0": {}

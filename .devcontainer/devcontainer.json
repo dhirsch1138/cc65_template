@@ -1,9 +1,7 @@
 // More info: https://containers.dev/implementors/json_reference/
 {
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
-	},
+	"image": "mcr.microsoft.com/devcontainers/base:debian",
+	"features": {},
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -13,6 +11,6 @@
 			]
 		}
 	},
-	"postCreateCommand": "npm install -g @devcontainers/cli && sudo apt update && sudo apt upgrade -y",
+	"postCreateCommand": "sudo apt update && sudo apt upgrade -y",
     "runArgs": ["--ulimit=nofile=1024:1048576"]
 }
