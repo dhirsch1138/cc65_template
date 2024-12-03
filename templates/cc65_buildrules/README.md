@@ -1,7 +1,7 @@
 
 # CC65 Development Dev Container (cc65_buildrules)
 
-CC65 dev container starting image with preconfigured makefile and make rules. Comes with optional examples. To use, just create a new dev container with a custom starting point of ghcr.io/dhirsch1138/cc65_template/cc65_buildrules. Full documentation in https://github.com/dhirsch1138/cc65_template
+CC65 dev container starting image with preconfigured makefile and make rules. Comes with optional examples. To use, just create a new dev container with a custom starting point of 'ghcr.io/dhirsch1138/cc65_template/cc65_buildrules'. Full documentation in https://github.com/dhirsch1138/cc65_template
 
 ## Options
 
