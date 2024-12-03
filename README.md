@@ -95,8 +95,29 @@ Again: This dev container comes with NO FIRMWARE OR SOURCE in the required direc
 If for whatever reason minipro isn't playing nice (again it is untested, sorry) then just get the bin directly in your system and run minipro there.
 
 # Quick Examples
-This dev container has three examples of different implementations of Ben Eater's blink.s program from Video 3. All three of these examples build into an identical resulting output.bin, they just illustrate how the functionality of cc65 can be leveraged to help remove mental labor from the coder.
-- "examples/video3_original" - Ben's rotating led blinker "blinks.s" from video 3 (https://eater.net/downloads/blink.s)
+This dev container has three examples of different implementations of Ben Eater's blink.s program from Video 3. All three examples do the same thing, they just illustrate how the functionality of cc65 can be leveraged to help remove mental labor from the coder.
+
+All three of these examples build into an identical binary @ "build/output.bin". You can prove this yourself after staging an example into "source/" and running `make all`. Below is result of staging, compiling, and viewing the contents "examples/video3_w_cc65_viafirmware"
+```
+vscode ➜ /workspaces/TestTemplate1 $ make all
+INFO: Processing source files in folder "source/"
+INFO: Located these source files and will process "source/blink.s source/via.s"
+INFO: CC65 rules folder ".c65/"
+INFO: Source files to assemble blink.s via.s
+INFO: Objects to build build/output/blink.o build/output/via.o
+ca65 --cpu 65C02  -o build/output/blink.o -l build/output/blink.lst source/blink.s
+ca65 --cpu 65C02  -o build/output/via.o -l build/output/via.lst source/via.s
+ld65  -C source/firmware.cfg -o build/output.bin -m build/output/output.map build/output/blink.o build/output/via.o
+vscode ➜ /workspaces/TestTemplate1 $ hexdump -C build/output.bin
+00000000  a9 ff 8d 02 60 a9 50 8d  00 60 6a 8d 00 60 4c 0a  |....`.P..`j..`L.|
+00000010  80 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000020  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+00007ff0  00 00 00 00 00 00 00 00  00 00 00 00 00 80 00 00  |................|
+00008000
+```
+
+- "examples/video3_original_w_cc65" - Ben's rotating led blinker "blinks.s" from video 3 (https://eater.net/downloads/blink.s) but with the associated firmware so that it'll build with ld65. 
 - "examples/video3_w_cc65" - dbuchwald's cc65'd version of Ben's example video 3 (https://github.com/dbuchwald/cc65-tools/blob/main/tutorial/02_blink/blink.s)
 - "examples/video3_w_cc65_viafirmware" - Illustrates how the firmware can be leveraged to dynamically handle memory spaces like the addresses we've assigned to the VIA, and eliminate the fragile hard coded memory references for via addresses like $6000. We also introduce included files to keep our codebase organized. Again, most of this is dbuchwald's fine work (https://github.com/dbuchwald/cc65-tools/blob/main/tutorial/03_blink/blink.s)
 
