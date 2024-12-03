@@ -61,15 +61,15 @@ This dev container comes with NO FIRMWARE OR SOURCE in the required directories.
 ### Source Code
 * All *.s files in "source/" will be assembled and linked. This means they can and will step on eachother in the resulting output if you are not careful. 
 * *.s files can include other files without that extension and the resulting combined file will treated as a single *.s file. 
-* These concepts are shown in the following example(s):
-  * "examples/video3_w_cc65_viafirmware" demonstrates include files and multiple *.s files
+* These concepts are shown in the the [example(s)](#quick-examples):
 
 ### Firmware
-Defines memory spaces & segments that your code will use. This sounds scary, don't panic. I'll try to explain it in comments as part of my examples. For now, just know that **firmware is defined in source/firmware.cfg**
-The firmware file is mandatory for cc65. When in doubt, simpler is better if you don't need the extra features. They are in all three examples:
+Defines memory spaces & segments that your code will use. This sounds scary, don't panic. I'll try to explain it in comments as part of my examples. For now, just know that **firmware is defined in source/firmware.cfg**. The make rules in this template expect a firmware.cfg file in the source director. When in doubt, simpler is better if you don't need the extra features. They are in all three examples:
 * "examples/video3_original" has a simple firmware definition, just declaring the code address range: starting at $8000 for $8000 bytes. The reset segment is defined too.
 * "examples/video3_w_cc65" has the same simple firmware definition, just declaring the code address range: starting at $8000 for $8000 bytes. The reset segment is defined too.
 * "examples/video3_w_cc65_viafirmware" has the same code address range, but also reserved addresses for the VIA. This lets the code reference the VIA address space dynamically.
+Documentation is here https://cc65.github.io/doc/ld65.html#config-files
+
 
 In summary (again):
 * Source goes in : source/*.s
