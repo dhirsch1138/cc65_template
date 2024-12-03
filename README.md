@@ -95,10 +95,21 @@ Again: This dev container comes with NO FIRMWARE OR SOURCE in the required direc
 If for whatever reason minipro isn't playing nice (again it is untested, sorry) then just get the bin directly in your system and run minipro there.
 
 # Quick Examples
-This dev container has three examples of different implementations of Ben Eater's blink.s program from Video 3. All three examples do the same thing, they just illustrate how the functionality of cc65 can be leveraged to help remove mental labor from the coder.
+This dev container has three examples of different implementations of Ben Eater's blink.s program from Video 3 (https://eater.net/downloads/blink.s) . All three examples do the same thing, they just illustrate how the functionality of cc65 can be leveraged to help remove mental labor from the coder.
+
+- "examples/video3_original_w_cc65" - Ben's rotating led blinker "blinks.s" from video 3 (https://eater.net/downloads/blink.s)
+  - Includes the associated firmware so that it'll build with ld65, even though the firmware isn't actually being used.
+- "examples/video3_w_cc65" - dbuchwald's cc65'd version of Ben's example video 3 (https://github.com/dbuchwald/cc65-tools/blob/main/tutorial/02_blink/blink.s)
+  - This illustrates how the vector and code definitions can be used (as provided by cc65 functionality) 
+- "examples/video3_w_cc65_viafirmware" - A futher evolution based on dbuchwalds work (https://github.com/dbuchwald/cc65-tools/blob/main/tutorial/03_blink/blink.s)
+  - Illustrates how the firmware can be leveraged to dynamically handle memory spaces to replace the static address refences (use dynamic references to VIA addresses).
+  - We also introduce included files to keep our codebase organized. 
+
+Reminder: the code from the examples will need to be moved into "source/" to build them
 
 All three of these examples build into an identical binary @ "build/output.bin". You can prove this yourself after staging an example into "source/" and running `make all`. Below is result of staging, compiling, and viewing the contents "examples/video3_w_cc65_viafirmware"
 ```
+vscode ➜ /workspaces/TestTemplate1 $ cp examples/video3_w_cc65_viafirmware/source/* source/
 vscode ➜ /workspaces/TestTemplate1 $ make all
 INFO: Processing source files in folder "source/"
 INFO: Located these source files and will process "source/blink.s source/via.s"
@@ -117,16 +128,9 @@ vscode ➜ /workspaces/TestTemplate1 $ hexdump -C build/output.bin
 00008000
 ```
 
-- "examples/video3_original_w_cc65" - Ben's rotating led blinker "blinks.s" from video 3 (https://eater.net/downloads/blink.s) but with the associated firmware so that it'll build with ld65. 
-- "examples/video3_w_cc65" - dbuchwald's cc65'd version of Ben's example video 3 (https://github.com/dbuchwald/cc65-tools/blob/main/tutorial/02_blink/blink.s)
-- "examples/video3_w_cc65_viafirmware" - Illustrates how the firmware can be leveraged to dynamically handle memory spaces like the addresses we've assigned to the VIA, and eliminate the fragile hard coded memory references for via addresses like $6000. We also introduce included files to keep our codebase organized. Again, most of this is dbuchwald's fine work (https://github.com/dbuchwald/cc65-tools/blob/main/tutorial/03_blink/blink.s)
-
-Reminder: the code from the examples will need to be moved into "source/" to build them
 
 ## Jumpstart: stage an example
-To help get you started you can:
-* You can simply copy the contents of any of the examples in "examples/" into "source/, I recommend "examples/video3_w_cc65_viafirmware" as I added a bunch of documentation
-* You can write your own (again in "source/")
+To help get you started you can stage an example by running the following from the workspace folder `cp examples/video3_w_cc65_viafirmware/source/* source/`
 
 ---
 
