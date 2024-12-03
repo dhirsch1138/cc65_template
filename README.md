@@ -23,7 +23,9 @@ Firstly: it is worth looking over https://code.visualstudio.com/docs/devcontaine
 Dev containers are self contained docker containers that house everything needed to code and compile a project (or really do anything, they are super flexible). You can use this one to:
  * code 6502 assembly
  * compile it using cc65
- * load it onto the eprom using minipro. You don't actually have to install any of that on your machine, it is all automagically in the dev container for youl
+ * load it onto the eeprom using minipro.
+You don't actually have to install any of these tools on your machine, it is all automagically in the dev container for you.
+
 ## Why create a dev container template?
 I am both meticious and lazy. I want my environment a specific way, but I am far too lazy to document it or recreate it verbatim every time I want to change something. Templates are self documenting, reproducible, easy to share, and easy to apply.
 
@@ -61,7 +63,7 @@ This dev container comes with NO FIRMWARE OR SOURCE in the required directories.
 ### Source Code
 * All *.s files in "source/" will be assembled and linked. This means they can and will step on eachother in the resulting output if you are not careful. 
 * *.s files can include other files without that extension and the resulting combined file will treated as a single *.s file. 
-* These concepts are shown in the the [example(s)](#quick-examples):
+* These concepts are shown in the the [example(s)](#quick-examples).
 
 ### Firmware
 Defines memory spaces & segments that your code will use. This sounds scary, don't panic. I'll try to explain it in comments as part of my examples. For now, just know that **firmware is defined in source/firmware.cfg**. The make rules in this template expect a firmware.cfg file in the source director. When in doubt, simpler is better if you don't need the extra features. They are in all three examples:
