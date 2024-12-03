@@ -1,9 +1,9 @@
 # Introduction
-This is my meager attempt to create functional 6502 dev container template. This template is targeted for VSCode but could easily be adapted (see the vscode extensions in the devcontainer.json). The examples modeled on Ben Eater's "blink.s" program from his 6502 tutorial videos. 
+This is my meager attempt to create functional 6502 dev container template. This template is targeted for VSCode but could easily be adapted (see the vscode extensions in the devcontainer.json). The [examples](#quick-examples) are modeled on Ben Eater's "blink.s" program from his 6502 tutorial videos. 
 
 It gives you:
 * An installed and configured 6502 compile chain in cc65, with the 'make file' already built
- * CC65 offers more features than vasm (see the examples\ folder)
+ * CC65 offers more features than vasm (see the [examples](#quick-examples)/ folder)
  * CC65 also supports C code, though my current rules files won't support it.
 * 6502 specific VS Code extensions
 * Minipro already installed and ready to rock
@@ -67,9 +67,9 @@ This dev container comes with NO FIRMWARE OR SOURCE in the required directories.
 
 ### Firmware
 Defines memory spaces & segments that your code will use. This sounds scary, don't panic. I'll try to explain it in comments as part of my examples. For now, just know that **firmware is defined in source/firmware.cfg**. The make rules in this template expect a firmware.cfg file in the source director. When in doubt, simpler is better if you don't need the extra features. They are in all three examples:
-* "examples/video3_original_w_cc65" has a simple firmware definition but it isn't actually being utilized in the source.
-* "examples/video3_w_cc65" has the same simple firmware definition, just declaring the code address range: starting at $8000 for $8000 bytes. The reset segment is defined too.
-* "examples/video3_w_cc65_viafirmware" has the same code address range, but also reserved addresses for the VIA. This lets the code reference the VIA address space dynamically.
+* "[examples)](#quick-examples)/video3_original_w_cc65" has a simple firmware definition but it isn't actually being utilized in the source.
+* "[examples)](#quick-examples)/video3_w_cc65" has the same simple firmware definition, just declaring the code address range: starting at $8000 for $8000 bytes. The reset segment is defined too.
+* "[examples)](#quick-examples)/video3_w_cc65_viafirmware" has the same code address range, but also reserved addresses for the VIA. This lets the code reference the VIA address space dynamically.
 Documentation is here https://cc65.github.io/doc/ld65.html#config-files
 
 
