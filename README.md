@@ -28,9 +28,9 @@ I am both meticious and lazy. I want my environment a specific way, but I am far
 ## What do I need to use dev containers?
 Follow the instructions on https://code.visualstudio.com/docs/devcontainers/containers#getstarted-articles. But basically you need: docker, vscode, and the dev container extension. 
 
-## That's all great, how do use this template to get a fresh dev container on my machine?
+## Create a Dev Container using this template
+**Short answer: VS Code task (F1) "Dev Containers: New Dev Container", provide custom template "ghcr.io/dhirsch1138/cc65_template/cc65_buildrules" without the quotes**
 This project was originally a dev container with everything in it: https://github.com/dhirsch1138/cc65_devcontainer_1 , but I moved it all into a dev container template to make it easier to use as intended.
-
 Use the VS Code task (F1) "Dev Containers: New Dev Container" to load a new container using this template.
 * When prompted for the container, type in "ghcr.io/dhirsch1138/cc65_template/cc65_buildrules" without the quotes. I encourage you to check out this repo before doing so, as you might be prompted to trust this container (as it'll be running code).
   * I intend to get this template registered so that it shows in the lookup. One day. I hope.  
