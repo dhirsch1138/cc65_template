@@ -56,7 +56,7 @@ A few VS Code shortcuts to know:
 ## Code and Firmware
 To build a project, the source code and firmware.cfg file will need to be in the correct directory: "source/"
 
-This dev container comes with NO FIRMWARE OR SOURCE in the required directories. See the Jumpstart section for one way to get started.
+This dev container comes with NO FIRMWARE OR SOURCE in the required directories. See the [Jumpstart](#jumpstart-stage-an-example) section for one way to get started.
 
 ### Source Code
 * All *.s files in "source/" will be assembled and linked. This means they can and will step on eachother in the resulting output if you are not careful. 
