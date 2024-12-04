@@ -130,6 +130,11 @@ vscode ➜ /workspaces/TestTemplate1 $ hexdump -C build/output.bin
 00008000
 ```
 
+You could then load that to an eeprom using minipro as follows (mind the error as I don't own a programmer yet)
+```
+vscode ➜ /workspaces/TestTemplate1 $ minipro -p AT28C256 -w build/output.bin
+No programmer found.
+```
 
 ## Jumpstart: stage an example
 To help get you started you can stage an example by running the following from the workspace folder `cp examples/video3_w_cc65_viafirmware/source/* source/`
