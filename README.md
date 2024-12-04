@@ -33,7 +33,7 @@ I am both meticious and lazy. I want my environment a specific way, but I am far
 Follow the instructions on https://code.visualstudio.com/docs/devcontainers/containers#getstarted-articles. But basically you need: docker, vscode, and the dev container extension. 
 
 ## Create a Dev Container using this template
-**_I encourage you to check out this repo before doing so, as you might be prompted to trust this container (as it'll be running code)._**
+**_I encourage you to check out this repo before doing so, as you might be prompted to trust this container._**
 
 **Short answer:** VS Code task (F1) "Dev Containers: New Dev Container", provide custom template `ghcr.io/dhirsch1138/cc65_template/cc65_buildrules`.
 
