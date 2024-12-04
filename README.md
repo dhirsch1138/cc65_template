@@ -17,7 +17,7 @@ All without having to install anything on your workstation (other than what is n
 # Dev Containers
 This might be your first encounter with dev containers. This project was mine (killing two birds with one rock, learning Dev Containers and 6502).
 
-Firstly: it is worth looking over https://code.visualstudio.com/docs/devcontainers/containers to see what you are getting into. But if you're asking me:
+Firstly: it is worth looking over https://code.visualstudio.com/docs/devcontainers/containers to see what you are getting into. 
 
 ## What are they? 
 Dev containers are self contained docker containers that house everything needed to code and compile a project (or really do anything, they are super flexible). You can use this one to:
