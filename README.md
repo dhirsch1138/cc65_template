@@ -2,9 +2,9 @@
 This is my meager attempt to create functional 6502 dev container template. This template is targeted for VSCode but could easily be adapted (see the vscode extensions in the devcontainer.json). The [examples](#quick-examples) are modeled on Ben Eater's "blink.s" program from his 6502 tutorial videos. 
 
 It gives you:
-* An installed and configured 6502 compile chain in cc65, with the 'make file' already built
- * CC65 offers more features than vasm (see the [examples](#quick-examples)/ folder)
- * CC65 also supports C code, though my current rules files won't support it.
+* An installed and configured 6502 compile chain in cc65, with the 'make file' already built. Why CC65?
+  * CC65 offers more features than vasm (see the [examples](#quick-examples)/ folder)
+  * CC65 also supports C code, though my current rules files won't support it.
 * 6502 specific VS Code extensions
 * Minipro already installed and ready to rock
 
