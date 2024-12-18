@@ -80,8 +80,8 @@ Maintanability and self documentation means a happier programmer.
 * "[examplesvideo3_original_w_cc65](#quick-examples)/" is Ben Eater's original example
   * This is not referencing the firmware.cfg file at all.
 * "[examples/video3_w_cc65](#quick-examples)" evolves on Ben Eater's example utilizing the configuration file modestly.
-  * The starting ".org" has been replaced by [".code"](https://cc65.github.io/doc/ca65.html#.CODE),  which the linker knows to map to $8000 for us as it is defined as a SEGMENT for the the MEMORY definition ROM.
-  * The reset reference at $fffc has been replaced with [].segment](https://cc65.github.io/doc/ca65.html#.SEGMENT) reference to "VECTORS", which is another defined SEGMENT in the configuration.
+  * The starting ".org" has been replaced by [.code](https://cc65.github.io/doc/ca65.html#.CODE),  which the linker knows to map to $8000 for us as it is defined as a SEGMENT for the the MEMORY definition ROM.
+  * The reset reference at $fffc has been replaced with [.segment](https://cc65.github.io/doc/ca65.html#.SEGMENT) reference to "VECTORS", which is another defined SEGMENT in the configuration.
 * "[examples/video3_w_cc65_viafirmware](#quick-examples)/" futher evolves on the example and adds more functionality provided by the configuration file.
   * defines a MEMORY space for the VIA addresses
   * uses that new VIA space in 'via.s', where it it is used to dynamically define familiar addresses DDRB and DDRA.
@@ -178,12 +178,14 @@ vscode ➜ /workspaces/<YourContainer> $ cp examples/video3_w_cc65_viafirmware/s
 ---
 
 # Attributions and Resources
-* **dbuchwald** https://github.com/dbuchwald/cc65-tools This project is only possible because of their makefile rules, configurations, and source examples. Sorry for butchering your work. Many of the examples presented are (or are based on) their work.
-* **MINIPRO** https://gitlab.com/DavidGriffith/minipro This is the project that lets us program eproms
-* **Ben Eater** https://eater.net/6502 The creator the the awesome 6502 youtube series. Also sells kits @ https://eater.net/shop
-* **Garth Wilson** http://wilsonminesco.com/6502primer/65tutor_intro.html The 6502 primer. Enough said.
-* **VASM** http://sun.hasenbraten.de/vasm the first assembler Ben introduces us too.
-* **cc65** https://cc65.github.io/ development package platform for 6502 family
- * **ca65** https://cc65.github.io/doc/ca65.html assembler guide (for our source code)
- * **ld65** https://cc65.github.io/doc/ld65.html linker guide (which applies the configuration)
-* **Dev Containers** https://code.visualstudio.com/docs/devcontainers/containers all about dev containers
+* [**dbuchwald**](https://github.com/dbuchwald/cc65-tools) This project is only possible because of their makefile rules, configurations, and source examples. Sorry for butchering your work. Many of the examples presented are (or are based on) their work.
+* [**Ben Eater**](https://eater.net/6502) The creator the the awesome 6502 youtube series. Also sells kits @ https://eater.net/shop
+* [**cc65**](https://cc65.github.io/) development package platform for 6502 family
+  * [**ca65**](https://cc65.github.io/doc/ca65.html) assembler guide (for our source code)
+  * [**ld65**](https://cc65.github.io/doc/ld65.html) linker guide (which applies the configuration)
+* [**Dev Containers**](https://code.visualstudio.com/docs/devcontainers/containers) all about dev containers
+* [**Garth Wilson**](http://wilsonminesco.com/6502primer/65tutor_intro.html) The 6502 primer. Enough said.
+* [**MINIPRO**](https://gitlab.com/DavidGriffith/minipro) This is the project that lets us program eproms
+* [**VASM**](http://sun.hasenbraten.de/vasm) Another 6502 compatible assembler.
+* [**The Western Design Center**](https://www.westerndesigncenter.com/) - Makers of amazing the W65C02S processor (and much more! did you know they have a 16 bit version?!). Also very lovely people.
+  * [**WDC Datasheets**](https://www.westerndesigncenter.com/wdc/documentation.php) - Direct link to the WDC documentation page, with links to their most current datasheet versions.  
