@@ -1,0 +1,3 @@
+templates/cc65_buildrules/build/
+templates/cc65_buildrules/source/**
+!templates/cc65_buildrules/source/SourceGoesHere.md
