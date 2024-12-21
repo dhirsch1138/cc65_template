@@ -59,7 +59,7 @@ A few VS Code shortcuts to know:
 * F1 opens the VSCode Command Palette. You may need to use it to rebuild your dev container if you decide to be adventerous and start tweaking you own dev container. 
 
 ## Code and Configuration
-To build a project, the source code and the configuration file "firmware.cfg" will need to be in the correct directory: "source/"
+To build a project, the source code and the configuration file "linker.cfg" will need to be in the correct directory: "source/"
 
 This dev container template comes with NO CONFIGURATION OR SOURCE in the required directories. See the [Jumpstart](#jumpstart-stage-an-example) section for one way to get started.
 
@@ -76,9 +76,9 @@ On its own, that might seem like more work, but imagine one day you wanted to re
 
 Maintanability and self documentation means a happier programmer.
 
-**Configuration is defined in source/firmware.cfg**. The make rules in this template expect a firmware.cfg file in the source director. They are in all three examples:
+**Configuration is defined in source/linker.cfg**. The make rules in this template expect a linker.cfg file in the source director. They are in all three examples:
 * "[examplesvideo3_original_w_cc65](#quick-examples)/" is Ben Eater's original example
-  * This is not referencing the firmware.cfg file at all.
+  * This is not referencing the linker.cfg file at all.
 * "[examples/video3_w_cc65](#quick-examples)" evolves on Ben Eater's example utilizing the configuration file modestly.
   * The starting ".org" has been replaced by [.code](https://cc65.github.io/doc/ca65.html#.CODE),  which the linker knows to map to $8000 for us as it is defined as a SEGMENT for the the MEMORY definition ROM.
   * The reset reference at $fffc has been replaced with [.segment](https://cc65.github.io/doc/ca65.html#.SEGMENT) reference to "VECTORS", which is another defined SEGMENT in the configuration.
@@ -88,7 +88,7 @@ Maintanability and self documentation means a happier programmer.
 
 In summary (again):
 * Source goes in : source/*.s
-* Configuration goes in : source/firmware.cfg
+* Configuration goes in : source/linker.cfg
 
 Again: This dev container comes with NO CONFIGURATION OR SOURCE in the required directories. See the [Jumpstart](#jumpstart-stage-an-example) section for one way to get started.
 
@@ -108,7 +108,7 @@ INFO: Source files to assemble blink.s via.s
 INFO: Objects to build build/output/blink.o build/output/via.o
 ca65 --cpu 65C02  -o build/output/blink.o -l build/output/blink.lst source/blink.s
 ca65 --cpu 65C02  -o build/output/via.o -l build/output/via.lst source/via.s
-ld65  -C source/firmware.cfg -o build/output.bin -m build/output/output.map build/output/blink.o build/output/via.o
+ld65  -C source/linker.cfg -o build/output.bin -m build/output/output.map build/output/blink.o build/output/via.o
 ```
 
 ### Looking at generated "output.bin" using hexdump
@@ -159,7 +159,7 @@ INFO: Source files to assemble blink.s via.s
 INFO: Objects to build build/output/blink.o build/output/via.o
 ca65 --cpu 65C02  -o build/output/blink.o -l build/output/blink.lst source/blink.s
 ca65 --cpu 65C02  -o build/output/via.o -l build/output/via.lst source/via.s
-ld65  -C source/firmware.cfg -o build/output.bin -m build/output/output.map build/output/blink.o build/output/via.o
+ld65  -C source/linker.cfg -o build/output.bin -m build/output/output.map build/output/blink.o build/output/via.o
 vscode ➜ /workspaces/TestTemplate1 $ hexdump -C build/output.bin
 00000000  a9 ff 8d 02 60 a9 50 8d  00 60 6a 8d 00 60 4c 0a  |....`.P..`j..`L.|
 00000010  80 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
