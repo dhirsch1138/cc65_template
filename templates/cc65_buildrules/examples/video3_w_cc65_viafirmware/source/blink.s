@@ -7,8 +7,8 @@
 ; ca65 documentaiton: https://cc65.github.io/doc/ca65.html#ss11.66
 ;It works like you'd expect an include, the assembler will combine the included files with the source before assembling.
 ;
-;Include the via file (we can use the .inc file as a sort of header, defining the imports there and keeping this source clean)
-  .include "via.s.inc"
+;Include the via import file (defining the imports there and keeping this source clean)
+  .include "via.s_imports"
  ;
  ;BE AWARE THAT LOCATION MATTERS FOR INCLUDED CONTENT, YOU MAY BE BETTER SERVED ADDING YOUR INCLUDED CONTENT ELSEWHERE
  ;LIKE AT THE END OF THE CODE.
@@ -35,8 +35,7 @@
  ;VECTORS               00FFFA  00FFFF  000006  00001
 
  ;We can see that the CODE address space starts at 08000 (and for this program, ends at 008010). But where
- ;are we, as the programmer, defining this?
- ;the firmware file in .c65/firmware/firmware.cfg
+ ;are we, as the programmer, defining this? The linker configuration files <filename>.cfg
  ; reference: https://cc65.github.io/doc/ld65.html
  ;  
  ;MEMORY
@@ -65,7 +64,11 @@
  ;* And "file" parameter without a type looks like it is just asserting (even though this is default) that binary output (.bin) is desired
  ;
  ;In short, what does this mean? This is a dynamic shorthand for:
+ ;  .segment CODE
+ ; or
  ;  .org $8000
+ ;
+ ; The code segment is special, it gets its own optional segment marker https://cc65.github.io/doc/ca65.html#ss11.13
   .code
 
 reset:
@@ -97,6 +100,3 @@ loop:
   sta VIA_PORTB
   ;jump back to the loop reference. We are now looping forever and ever and ever
   jmp loop
-
-;Include the reset file for the vector
-  .include "reset_interrupt.s.inc"

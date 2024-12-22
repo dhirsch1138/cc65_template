@@ -153,13 +153,13 @@ All three of these examples build into an identical binary @ "build/output.bin".
 vscode ➜ /workspaces/TestTemplate1 $ cp examples/video3_w_cc65_viafirmware/source/* source/
 vscode ➜ /workspaces/TestTemplate1 $ make all
 INFO: Processing source files in folder "source/"
-INFO: Located these source files and will process "source/blink.s source/via.s"
+INFO: Located these source files and will process "source/blink.s source/reset_interrupt.s source/via.s"
+INFO: Will use linker configuration "source/linker.cfg"
 INFO: CC65 rules folder ".c65/"
-INFO: Source files to assemble blink.s via.s
-INFO: Objects to build build/output/blink.o build/output/via.o
+INFO: Source files to assemble blink.s reset_interrupt.s via.s
+INFO: Objects to build build/output/blink.o build/output/reset_interrupt.o build/output/via.o
 ca65 --cpu 65C02  -o build/output/blink.o -l build/output/blink.lst source/blink.s
-ca65 --cpu 65C02  -o build/output/via.o -l build/output/via.lst source/via.s
-ld65  -C source/linker.cfg -o build/output.bin -m build/output/output.map build/output/blink.o build/output/via.o
+ld65  -C source/linker.cfg -o build/output.bin -m build/output/output.map build/output/blink.o build/output/reset_interrupt.o build/output/via.o
 vscode ➜ /workspaces/TestTemplate1 $ hexdump -C build/output.bin
 00000000  a9 ff 8d 02 60 a9 50 8d  00 60 6a 8d 00 60 4c 0a  |....`.P..`j..`L.|
 00000010  80 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
