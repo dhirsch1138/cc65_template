@@ -38,7 +38,7 @@ Follow the instructions on https://code.visualstudio.com/docs/devcontainers/cont
 ## Create a Dev Container using this template
 **_I encourage you to review this repo and is declared features [minipro_feature](https://github.com/dhirsch1138/minipro_feature) & [cc65_template](https://github.com/dhirsch1138/cc65_feature) before doing so, as you might be prompted to trust this container._**
 
-**Note**: This container runs a privileged docker instance. Be mindful. I'm no doing anything turbo odd, but I am pulling in code from CC65 and minipro.
+**Note**: This container runs a _privileged docker instance_. Be mindful. I'm no doing anything turbo odd, but I am pulling in code from CC65 and minipro.
  - To mitigate risk MINIPRO is no longer always cloning the latest and greatest. I built a debian based on the latest 'presumed good' code and have MINIPRO installing that. That will at least protect us in case someone nasty gets that repo. I'll have to update the MINIPRO feature myself periodically to pull in new features.
 
 **Short answer:** VS Code task (F1) "Dev Containers: New Dev Container", provide custom template `ghcr.io/dhirsch1138/cc65_template/cc65_buildrules`.
@@ -132,7 +132,7 @@ $ hexdump -C build/output.bin
 - open a terminal instance for the container.
 - run minipro as usual (untested, I don't own a programmer yet)
 ```
-$ minipro -p AT28C256 -w build/output.bin
+$ minipro -p 28C256 -uP -w build/output.bin
 ```
 
 #### From outside of the container
