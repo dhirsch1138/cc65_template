@@ -130,7 +130,7 @@ $ hexdump -C build/output.bin
 ### Writing eprom
 #### From inside the container
 - open a terminal instance for the container.
-- run minipro as usual (untested, I don't own a programmer yet)
+- run minipro as usual
 ```
 $ minipro -p 28C256 -uP -w build/output.bin
 ```
